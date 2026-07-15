@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.ck.ck-editor__main > .ck-editor__editable {
+  max-height: 250px;
+}

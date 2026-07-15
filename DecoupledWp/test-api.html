@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WordPress API Test</title>
+</head>
+<body>
+    <h1>WordPress API Test</h1>
+    <p>Open Browser DevTools (F12) and check Console tab for results</p>
+    
+    <script>
+        // Test 1: Basic API call with auth
+        async function testAPI() {
+            console.log("Testing WordPress API...");
+            
+            const username = "DevHabeeb";
+            const password = "123PcIr TSS6 gqSD Mcof FUIT Mim7";
+            const credentials = btoa(username + ":" + password);
+            
+            console.log("Credentials (base64):", credentials);
+            
+            try {
+                const response = await fetch("https://idl-3d.xyz/wp-json/wp/v2/posts", {
+                    method: "GET",
+                    headers: {
+                        "Authorization": "Basic " + credentials
+                    }
+                });
+                
+                console.log("Status:", response.status);
+                console.log("OK:", response.ok);
+                console.log("Headers:", response.headers);
+                
+                const data = await response.json();
+                console.log("Response:", data);
+                
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
+        
+        // Run test
+        testAPI();
+    </script>
+</body>
+</html>
