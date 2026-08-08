@@ -38,7 +38,7 @@ const EditPostModal = ({ handleCloseEvent, postId, categoriesList, fetchWordPres
       const apiResponse = await fetch(`https://idl-3d.xyz/wp-json/wp/v2/posts/${postId}`, {
         method: "GET",
         headers: {
-          Authorization: "Basic " + btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          Authorization: "Basic " + btoa("DevHabeeb:NIL")
         }
       });
 
@@ -81,7 +81,7 @@ const EditPostModal = ({ handleCloseEvent, postId, categoriesList, fetchWordPres
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Basic " + btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          Authorization: "Basic " + btoa("DevHabeeb:NIL")
         },
         body: JSON.stringify(postData)
       });
@@ -108,7 +108,7 @@ const EditPostModal = ({ handleCloseEvent, postId, categoriesList, fetchWordPres
       const apiResponse = await fetch("https://idl-3d.xyz/wp-json/wp/v2/media", {
         method: "POST",
         headers: {
-          Authorization: "Basic " + btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          Authorization: "Basic " + btoa("DevHabeeb:NIL")
         },
         body: formData
       });
