@@ -48,7 +48,7 @@ const AddPostModal = ({ handleCloseEvent, categoriesList, fetchWordPressPosts })
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Basic "+ btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          "Authorization": "Basic "+ btoa("DevHabeeb:NIL")
         },
         body: JSON.stringify(postData)
       })
@@ -75,7 +75,7 @@ const AddPostModal = ({ handleCloseEvent, categoriesList, fetchWordPressPosts })
       const apiResponse = await fetch("https://idl-3d.xyz/wp-json/wp/v2/media", {
         method: "POST",
         headers: {
-          "Authorization": "Basic "+ btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          "Authorization": "Basic "+ btoa("DevHabeeb:NIL")
         },
           body: formData
     })
