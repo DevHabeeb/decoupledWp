@@ -33,7 +33,7 @@ const PostList = () => {
       const apiResponse = await fetch("https://idl-3d.xyz/wp-json/wp/v2/posts?per_page=100", {
         "method": "GET",
         "headers": {
-          "Authorization": "Basic " + btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          "Authorization": "Basic " + btoa("DevHabeeb:NIL")
         }
       }
       )
@@ -190,7 +190,7 @@ const PostList = () => {
       const apiResponse = await fetch("https://idl-3d.xyz/wp-json/wp/v2/categories", {
         "method": "GET",
         "headers": {
-          "Authorization": "Basic " + btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          "Authorization": "Basic " + btoa("DevHabeeb:NIL")
         }
       }
       )
@@ -245,7 +245,7 @@ const PostList = () => {
                 "method": "GET",
                 "headers": {
                   "Content-Type": "application/json",
-                  "Authorization": "Basic " + btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+                  "Authorization": "Basic " + btoa("DevHabeeb:NIL")
                 }
               });
 
@@ -276,7 +276,7 @@ const PostList = () => {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Basic "+ btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          "Authorization": "Basic "+ btoa("DevHabeeb:NIL")
         }
       })
 
