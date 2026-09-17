@@ -12,14 +12,14 @@
         async function testAPI() {
             console.log("Testing WordPress API...");
             
-            const username = "DevHabeeb";
-            const password = "123PcIr TSS6 gqSD Mcof FUIT Mim7";
+            const username = "INPUT_USERNAME";
+            const password = "INPUT_PASSWORD";
             const credentials = btoa(username + ":" + password);
             
             console.log("Credentials (base64):", credentials);
             
             try {
-                const response = await fetch("https://idl-3d.xyz/wp-json/wp/v2/posts", {
+                const response = await fetch("INPUT_ENDPOINT/wp-json/wp/v2/posts", {
                     method: "GET",
                     headers: {
                         "Authorization": "Basic " + credentials

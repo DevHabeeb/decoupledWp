@@ -13,7 +13,7 @@ const PostList = () => {
   const [featuredMediaImages, setFeaturedMediaImages] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [editPostId, setEditPostId] = useState(null);
-  const [defaultFeaturedImage, setDefaultFeaturedImage] = useState("https://idl-3d.xyz/wp-content/uploads/2026/02/Contact-Image.webp");
+  const [defaultFeaturedImage, setDefaultFeaturedImage] = useState("INPUT_ENDPOINT/wp-content/uploads/2026/02/Contact-Image.webp");
 
 
   const toggleAddPostModalFlag = () => {
@@ -30,10 +30,10 @@ const PostList = () => {
     try {
       setIsLoading(true); // Trigger loading before API execution
 
-      const apiResponse = await fetch("https://idl-3d.xyz/wp-json/wp/v2/posts?per_page=100", {
+      const apiResponse = await fetch("INPUT_ENDPOINT", {
         "method": "GET",
         "headers": {
-          "Authorization": "Basic " + btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          "Authorization": "Basic " + btoa("INPUT_USERNAME:INPUT_PASSWORD")
         }
       }
       )
@@ -88,7 +88,7 @@ const PostList = () => {
     // Generate JWT Token Value
     // const generateJWTTokenValue = async () => {
     //   try {
-    //     const apiResponse = await fetch("http://idl-3d.xyz/wp-json/jwt-auth/v1/token", {
+    //     const apiResponse = await fetch("INPUT_ENDPOINT/wp-json/jwt-auth/v1/token", {
     //       "method": "POST",
     //       "headers": {  
     //         "Content-Type": "application/json"
@@ -110,7 +110,7 @@ const PostList = () => {
 
   //   const validateJWTToken = async (token) => {
   //     try {
-  //       const apiResponse = await fetch("http://idl-3d.xyz/wp-json/jwt-auth/v1/token/validate", {
+  //       const apiResponse = await fetch("INPUT_ENDPOINT/wp-json/jwt-auth/v1/token/validate", {
   //         "method": "POST",
   //         "headers": {  
   //           "Content-Type": "application/json",
@@ -187,10 +187,10 @@ const PostList = () => {
    const fetchWordPressPostsCategories = async () => {
     try {
 
-      const apiResponse = await fetch("https://idl-3d.xyz/wp-json/wp/v2/categories", {
+      const apiResponse = await fetch("INPUT_ENDPOINT/wp-json/wp/v2/categories", {
         "method": "GET",
         "headers": {
-          "Authorization": "Basic " + btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          "Authorization": "Basic " + btoa("INPUT_USERNAME:INPUT_PASSWORD")
         }
       }
       )
@@ -241,11 +241,11 @@ const PostList = () => {
 
             try {
 
-              const apiResponse = await fetch("https://idl-3d.xyz/wp-json/wp/v2/media/" + singlePostObject.featured_media, {
+              const apiResponse = await fetch("INPUT_ENDPOINT/wp-json/wp/v2/media/" + singlePostObject.featured_media, {
                 "method": "GET",
                 "headers": {
                   "Content-Type": "application/json",
-                  "Authorization": "Basic " + btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+                  "Authorization": "Basic " + btoa("INPUT_USERNAME:INPUT_PASSWORD")
                 }
               });
 
@@ -272,11 +272,11 @@ const PostList = () => {
   // Delete Post
   const handlePostDelete = async (postId) => {
     try { if (window.confirm("Are you sure you want to delete this post?")) {
-       const apiResponse = await fetch("https://idl-3d.xyz/wp-json/wp/v2/posts/" + postId, {
+       const apiResponse = await fetch("INPUT_ENDPOINT/wp-json/wp/v2/posts/" + postId, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Basic "+ btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          "Authorization": "Basic "+ btoa("INPUT_USERNAME:INPUT_PASSWORD")
         }
       })
 

@@ -44,11 +44,11 @@ const AddPostModal = ({ handleCloseEvent, categoriesList, fetchWordPressPosts })
     console.log(postData);
 
     try { 
-      const apiResponse = await fetch("https://idl-3d.xyz/wp-json/wp/v2/posts", {
+      const apiResponse = await fetch("INPUT_ENDPOINT/wp-json/wp/v2/posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Basic "+ btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          "Authorization": "Basic "+ btoa("INPUT_USERNAME:INPUT_PASSWORD")
         },
         body: JSON.stringify(postData)
       })
@@ -72,10 +72,10 @@ const AddPostModal = ({ handleCloseEvent, categoriesList, fetchWordPressPosts })
       formData.append('file', featuredImageFile);
       formData.append('alt_text', "Featured Image of Post");
 
-      const apiResponse = await fetch("https://idl-3d.xyz/wp-json/wp/v2/media", {
+      const apiResponse = await fetch("INPUT_ENDPOINT/wp-json/wp/v2/media", {
         method: "POST",
         headers: {
-          "Authorization": "Basic "+ btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          "Authorization": "Basic "+ btoa("INPUT_USERNAME:INPUT_PASSWORD")
         },
           body: formData
     })

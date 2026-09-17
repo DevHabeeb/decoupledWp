@@ -4,7 +4,7 @@ import 'ckeditor5/ckeditor5.css';
 import { useState, useEffect } from 'react';
 
 const EditPostModal = ({ handleCloseEvent, postId, categoriesList, fetchWordPressPosts }) => {
-  const defaultFeaturedImage = "https://idl-3d.xyz/wp-content/uploads/2026/02/Contact-Image.webp";
+  const defaultFeaturedImage = "INPUT_ENDPOINT/wp-content/uploads/2026/02/Contact-Image.webp";
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [editorContent, setEditorContent] = useState("");
@@ -20,10 +20,10 @@ const EditPostModal = ({ handleCloseEvent, postId, categoriesList, fetchWordPres
   const fetchSingleWordPressPostData = async (postId) => {
     const fetchWordPressPostMediaURL = async (mediaID) => {
       try {
-        const apiResponse = await fetch(`https://idl-3d.xyz/wp-json/wp/v2/media/${mediaID}`, {
+        const apiResponse = await fetch(`INPUT_ENDPOINT/wp-json/wp/v2/media/${mediaID}`, {
           method: "GET",
           headers: {
-            Authorization: "Basic " + btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+            Authorization: "Basic " + btoa("INPUT_USERNAME:INPUT_PASSWORD")
           }
         });
         const apiData = await apiResponse.json();
@@ -35,10 +35,10 @@ const EditPostModal = ({ handleCloseEvent, postId, categoriesList, fetchWordPres
     };
 
     try {
-      const apiResponse = await fetch(`https://idl-3d.xyz/wp-json/wp/v2/posts/${postId}`, {
+      const apiResponse = await fetch(`INPUT_ENDPOINT/wp-json/wp/v2/posts/${postId}`, {
         method: "GET",
         headers: {
-          Authorization: "Basic " + btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          Authorization: "Basic " + btoa("INPUT_USERNAME:INPUT_PASSWORD")
         }
       });
 
@@ -77,11 +77,11 @@ const EditPostModal = ({ handleCloseEvent, postId, categoriesList, fetchWordPres
     };
 
     try {
-      const apiResponse = await fetch(`https://idl-3d.xyz/wp-json/wp/v2/posts/${postId}`, {
+      const apiResponse = await fetch(`INPUT_ENDPOINT/wp-json/wp/v2/posts/${postId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Basic " + btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          Authorization: "Basic " + btoa("INPUT_USERNAME:INPUT_PASSWORD")
         },
         body: JSON.stringify(postData)
       });
@@ -105,10 +105,10 @@ const EditPostModal = ({ handleCloseEvent, postId, categoriesList, fetchWordPres
       formData.append("file", featuredImageFileToUpload, featuredImageFileToUpload.name);
       formData.append("alt_text", "Featured Image of Post");
 
-      const apiResponse = await fetch("https://idl-3d.xyz/wp-json/wp/v2/media", {
+      const apiResponse = await fetch("INPUT_ENDPOINT/wp-json/wp/v2/media", {
         method: "POST",
         headers: {
-          Authorization: "Basic " + btoa("DevHabeeb:PcIr TSS6 gqSD Mcof FUIT Mim7")
+          Authorization: "Basic " + btoa("INPUT_USERNAME:INPUT_PASSWORD")
         },
         body: formData
       });
